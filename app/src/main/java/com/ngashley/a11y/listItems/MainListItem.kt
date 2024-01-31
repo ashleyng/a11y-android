@@ -36,7 +36,7 @@ enum class MainListItem: ListRow {
     fun DestinationView(navController: NavController) {
         when (this) {
             Lists -> CommonList(items = ListListItem.entries, navController = navController)
-            Components -> CommonList(items = ListListItem.entries, navController = navController)
+            Components -> CommonList(items = ComponentItem.entries, navController = navController)
             Strings -> CommonList(items = ListListItem.entries, navController = navController)
         }
     }

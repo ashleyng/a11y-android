@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.ngashley.a11y.common.CommonList
+import com.ngashley.a11y.listItems.ComponentItem
 import com.ngashley.a11y.listItems.MainListItem
 
 @Composable
@@ -24,6 +25,12 @@ fun AppNavHost(
             CommonList(items = MainListItem.entries, navController = navController)
         }
         MainListItem.entries.forEach { item ->
+            composable(item.destinationKey) {
+                item.DestinationView(navController = navController)
+            }
+        }
+        
+        ComponentItem.entries.forEach { item ->
             composable(item.destinationKey) {
                 item.DestinationView(navController = navController)
             }
