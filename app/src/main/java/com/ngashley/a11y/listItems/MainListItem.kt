@@ -2,11 +2,14 @@ package com.ngashley.a11y.listItems
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
+import com.ngashley.a11y.R
 import com.ngashley.a11y.common.CommonList
+import com.ngashley.a11y.common.ResId
 
 interface ListRow {
-    val titleString: String
-    val destinationKey: String
+    val titleString: ResId
+    val subtitleString: ResId?
+    val destinationKey: String?
 }
 
 enum class MainListItem: ListRow {
@@ -14,14 +17,17 @@ enum class MainListItem: ListRow {
     Components,
     Strings;
 
-    override val titleString: String
+    override val titleString: ResId
         get() {
             return when (this) {
-                Lists -> "Lists"
-                Components -> "Components"
-                Strings -> "String"
+                Lists -> R.string.lists
+                Components -> R.string.components
+                Strings -> R.string.string
             }
         }
+
+    override val subtitleString: ResId?
+        get() = null
 
     override val destinationKey: String
         get() {

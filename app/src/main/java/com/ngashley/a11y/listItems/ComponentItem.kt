@@ -2,7 +2,9 @@ package com.ngashley.a11y.listItems
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
+import com.ngashley.a11y.R
 import com.ngashley.a11y.common.CommonList
+import com.ngashley.a11y.common.ResId
 import com.ngashley.a11y.componentItems.ButtonView
 
 
@@ -16,21 +18,24 @@ enum class ComponentItem: ListRow {
     Switch,
     BottomSheet;
 
-    override val titleString: String
+    override val titleString: ResId
         get() {
             return when (this) {
-                Button -> "Button"
-                Card -> "Card"
-                Chip -> "Chip"
-                Dialog -> "Dialog"
-                ProgressIndicator -> "Progress Indicator"
-                Slider -> "Slider"
-                Switch -> "Switch"
-                BottomSheet -> "Bottom Sheet"
+                Button -> R.string.button
+                Card -> R.string.card
+                Chip -> R.string.chip
+                Dialog -> R.string.dialog_str
+                ProgressIndicator -> R.string.progress_indicator
+                Slider -> R.string.slider
+                Switch -> R.string.switch_str
+                BottomSheet -> R.string.bottom_sheet
             }
         }
 
-    override val destinationKey: String
+    override val subtitleString: ResId?
+        get() = null
+
+    override val destinationKey: String?
         get() {
             return when (this) {
                 Button -> "button"

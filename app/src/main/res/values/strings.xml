@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">A11y</string>
+    <string name="reorderable">Reorderable</string>
+    <string name="carousel">Carousel</string>
+    <string name="collection">Collection</string>
+    <string name="reorderable_custom_implementation">Reorderable list not possible without custom implementation</string>
+    <string name="lists">Lists</string>
+    <string name="components">Components</string>
+    <string name="string">String</string>
+    <string name="button">Button</string>
+    <string name="card">Card</string>
+    <string name="chip">Chip</string>
+    <string name="dialog_str">Dialog</string>
+    <string name="progress_indicator">Progress Indicator</string>
+    <string name="slider">Slider</string>
+    <string name="switch_str">Switch</string>
+    <string name="bottom_sheet">Bottom Sheet</string>
 </resources>
