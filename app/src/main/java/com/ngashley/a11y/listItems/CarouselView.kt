@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -25,6 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -33,39 +35,45 @@ fun Carousel() {
         5
     })
 
-    HorizontalPager(state = pagerState) { page ->
-        Column(
-            modifier = Modifier.semantics(mergeDescendants = true) { },
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            Text(
-                text = "Page: $page",
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
-            )
-            Icon(imageVector = Icons.Outlined.Favorite, contentDescription = "")
-        }
-    }
-
-    Box {
-        Row(
-            Modifier
-                .wrapContentHeight()
-                .fillMaxWidth()
-                .align(Alignment.BottomCenter)
-                .padding(bottom = 8.dp),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            repeat(pagerState.pageCount) { iteration ->
-                val color = if (pagerState.currentPage == iteration) Color.DarkGray else Color.LightGray
-                Box(
-                    modifier = Modifier
-                        .padding(4.dp)
-                        .clip(CircleShape)
-                        .background(color)
-                        .size(16.dp)
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        HorizontalPager(state = pagerState) { page ->
+            Column(
+                modifier = Modifier.semantics(mergeDescendants = true) { },
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(
+                    text = "Page: $page",
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth()
                 )
+                Icon(imageVector = Icons.Outlined.Favorite, contentDescription = "")
+            }
+        }
+
+        Box {
+            Row(
+                Modifier
+                    .wrapContentHeight()
+                    .fillMaxWidth()
+                    .align(Alignment.BottomCenter)
+                    .padding(bottom = 8.dp),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                repeat(pagerState.pageCount) { iteration ->
+                    val color = if (pagerState.currentPage == iteration) Color.DarkGray else Color.LightGray
+                    Box(
+                        modifier = Modifier
+                            .padding(4.dp)
+                            .clip(CircleShape)
+                            .background(color)
+                            .size(16.dp)
+                    )
+                }
             }
         }
     }

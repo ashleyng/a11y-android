@@ -1,5 +1,7 @@
 package com.ngashley.a11y.main
 
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -12,11 +14,13 @@ import com.ngashley.a11y.listItems.ListListItem
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
+    innerPadding: PaddingValues,
     navController: NavHostController,
     startDestination: String = "main",
 ) {
     NavHost(
-        modifier = modifier,
+        modifier = modifier
+            .padding(innerPadding),
         navController = navController,
         startDestination = startDestination
     ) {
