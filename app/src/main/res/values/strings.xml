@@ -4,6 +4,7 @@
     <string name="carousel">Carousel</string>
     <string name="collection">Collection</string>
     <string name="reorderable_custom_implementation">Reorderable list not possible without custom implementation</string>
+    <string name="carousel_page_implementation">Carousel pager and Talkback does not work out of the box and requires some custom implementation</string>
     <string name="lists">Lists</string>
     <string name="components">Components</string>
     <string name="string">String</string>
@@ -15,4 +16,7 @@
     <string name="slider">Slider</string>
     <string name="switch_str">Switch</string>
     <string name="bottom_sheet">Bottom Sheet</string>
+    <string name="image_button">Note: Image only button by default is not focusable in Talkback</string>
+    <string name="filled_button">Filled</string>
+    <string name="coming_soon">%1$s - Coming Soon</string>
 </resources>

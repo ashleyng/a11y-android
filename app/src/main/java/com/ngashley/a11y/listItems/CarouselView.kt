@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
@@ -31,9 +32,10 @@ fun Carousel() {
     val pagerState = rememberPagerState(pageCount = {
         5
     })
+
     HorizontalPager(state = pagerState) { page ->
-        // Our page content
         Column(
+            modifier = Modifier.semantics(mergeDescendants = true) { },
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {

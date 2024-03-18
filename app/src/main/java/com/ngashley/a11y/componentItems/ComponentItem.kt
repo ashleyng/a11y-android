@@ -1,11 +1,11 @@
-package com.ngashley.a11y.listItems
+package com.ngashley.a11y.componentItems
 
+import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import com.ngashley.a11y.R
-import com.ngashley.a11y.common.CommonList
 import com.ngashley.a11y.common.ResId
-import com.ngashley.a11y.componentItems.ButtonView
+import com.ngashley.a11y.main.ListRow
 
 
 enum class ComponentItem: ListRow {
@@ -17,20 +17,6 @@ enum class ComponentItem: ListRow {
     Slider,
     Switch,
     BottomSheet;
-
-    override val titleString: ResId
-        get() {
-            return when (this) {
-                Button -> R.string.button
-                Card -> R.string.card
-                Chip -> R.string.chip
-                Dialog -> R.string.dialog_str
-                ProgressIndicator -> R.string.progress_indicator
-                Slider -> R.string.slider
-                Switch -> R.string.switch_str
-                BottomSheet -> R.string.bottom_sheet
-            }
-        }
 
     override val subtitleString: ResId?
         get() = null
@@ -48,6 +34,19 @@ enum class ComponentItem: ListRow {
                 BottomSheet -> "bottomSheet"
             }
         }
+
+    override fun titleString(context: Context): String {
+        return when (this) {
+            Button -> context.getString(R.string.button)
+            Card -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.card))
+            Chip -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.chip))
+            Dialog -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.dialog_str))
+            ProgressIndicator -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.progress_indicator))
+            Slider -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.slider))
+            Switch -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.switch_str))
+            BottomSheet -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.bottom_sheet))
+        }
+    }
 
     @Composable
     fun DestinationView(navController: NavController) {

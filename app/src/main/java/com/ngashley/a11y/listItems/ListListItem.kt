@@ -1,29 +1,23 @@
 package com.ngashley.a11y.listItems
 
+import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import com.ngashley.a11y.R
 import com.ngashley.a11y.common.ResId
+import com.ngashley.a11y.main.ListRow
 
 enum class ListListItem: ListRow {
     Reorderable,
     Carousel,
     Collection;
 
-    override val titleString: ResId
-        get() {
-            return when (this) {
-                Reorderable -> R.string.reorderable
-                Carousel -> R.string.carousel
-                Collection -> R.string.collection
-            }
-        }
-
     override val subtitleString: ResId?
         get() {
             return when (this) {
                 Reorderable -> R.string.reorderable_custom_implementation
-                Carousel, Collection -> null
+                Carousel -> R.string.carousel_page_implementation
+                Collection -> null
             }
         }
 
@@ -35,6 +29,14 @@ enum class ListListItem: ListRow {
                 Collection -> "collection"
             }
         }
+
+    override fun titleString(context: Context): String {
+        return when (this) {
+            Reorderable -> context.getString(R.string.reorderable)
+            Carousel -> context.getString(R.string.carousel)
+            Collection -> context.getString(R.string.collection)
+        }
+    }
 
     @Composable
     fun DestinationView(navController: NavController) {

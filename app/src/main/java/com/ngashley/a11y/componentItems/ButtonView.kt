@@ -15,8 +15,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ngashley.a11y.R
 
 @Composable
 fun ButtonView(modifier: Modifier = Modifier) {
@@ -26,7 +28,7 @@ fun ButtonView(modifier: Modifier = Modifier) {
         .fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Button(onClick = {  }) {
-            Text("Filled")
+            Text(stringResource(id = R.string.filled_button))
         }
 
         TextButton(
@@ -44,8 +46,11 @@ fun ButtonView(modifier: Modifier = Modifier) {
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus.")
         }
 
-        Button(onClick = {  }) {
-            Icon(imageVector = Icons.Outlined.Favorite, contentDescription = "")
+        Column {
+            Button(onClick = {  }) {
+                Icon(imageVector = Icons.Outlined.Favorite, contentDescription = "")
+            }
+            Text(text = stringResource(id = R.string.image_button))
         }
 
         Button(onClick = {  },

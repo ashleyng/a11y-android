@@ -6,9 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.ngashley.a11y.common.CommonList
-import com.ngashley.a11y.listItems.ComponentItem
+import com.ngashley.a11y.componentItems.ComponentItem
 import com.ngashley.a11y.listItems.ListListItem
-import com.ngashley.a11y.listItems.MainListItem
 
 @Composable
 fun AppNavHost(
