@@ -42,8 +42,8 @@ enum class ComponentItem: ListRow {
             Chip -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.chip))
             Dialog -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.dialog_str))
             ProgressIndicator -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.progress_indicator))
-            Slider -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.slider))
-            Switch -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.switch_str))
+            Slider -> context.getString(R.string.slider)
+            Switch -> context.getString(R.string.switch_str)
             BottomSheet -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.bottom_sheet))
         }
     }
@@ -56,8 +56,8 @@ enum class ComponentItem: ListRow {
             Chip -> "chip"
             Dialog -> "dialog"
             ProgressIndicator -> "progressIndicator"
-            Slider -> "slider"
-            Switch -> "switch"
+            Slider -> SliderView()
+            Switch -> SwitchView()
             BottomSheet -> "bottomSheet"
         }
     }
