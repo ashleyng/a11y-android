@@ -19,4 +19,5 @@
     <string name="image_button">Note: Image only button by default is not focusable in Talkback</string>
     <string name="filled_button">Filled</string>
     <string name="coming_soon">%1$s - Coming Soon</string>
+    <string name="floating_action_button">Floating action button</string>
 </resources>

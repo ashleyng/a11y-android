@@ -16,7 +16,8 @@ enum class ComponentItem: ListRow {
     ProgressIndicator,
     Slider,
     Switch,
-    BottomSheet;
+    BottomSheet,
+    FloatingActionButton;
 
     override val subtitleString: ResId?
         get() = null
@@ -32,6 +33,7 @@ enum class ComponentItem: ListRow {
                 Slider -> "slider"
                 Switch -> "switch"
                 BottomSheet -> "bottomSheet"
+                FloatingActionButton -> "floatingActionButton"
             }
         }
 
@@ -45,6 +47,7 @@ enum class ComponentItem: ListRow {
             Slider -> context.getString(R.string.slider)
             Switch -> context.getString(R.string.switch_str)
             BottomSheet -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.bottom_sheet))
+            FloatingActionButton -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.floating_action_button))
         }
     }
 
@@ -59,6 +62,7 @@ enum class ComponentItem: ListRow {
             Slider -> SliderView()
             Switch -> SwitchView()
             BottomSheet -> "bottomSheet"
+            FloatingActionButton -> "floatingActionButton"
         }
     }
 }
