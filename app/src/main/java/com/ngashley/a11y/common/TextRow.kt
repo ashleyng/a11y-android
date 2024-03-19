@@ -20,13 +20,13 @@ fun TitleSubtitle(title: String, subtitle: String?, modifier: Modifier = Modifie
         Text(
             modifier = Modifier
                 .fillMaxWidth(),
-            style = MaterialTheme.typography.titleLarge,
+            style = MaterialTheme.typography.titleMedium,
             text = title)
         subtitle?.let {
             Text(
                 modifier = Modifier
                     .fillMaxWidth(),
-                style = MaterialTheme.typography.titleSmall,
+                style = MaterialTheme.typography.labelMedium,
                 text = subtitle
             )
         }

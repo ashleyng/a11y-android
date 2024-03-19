@@ -109,66 +109,31 @@ fun CardView(modifier: Modifier = Modifier) {
             }
         }
 
-        Card(
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant,
-            ),
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(IntrinsicSize.Min)
-                .wrapContentHeight()
-        ) {
-            Column(
+        (0..3).forEach {
+            Card(
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                ),
                 modifier = Modifier
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                Text(
-                    text = stringResource(id = R.string.simple_card),
-                    style = MaterialTheme.typography.titleLarge,
-                )
-            }
-        }
-
-        ElevatedCard(
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant,
-            ),
-            elevation = CardDefaults.cardElevation(
-                defaultElevation = 8.dp
-            ),
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(IntrinsicSize.Min)
-                .wrapContentHeight()
-        ) {
-            Column(
-                modifier = Modifier
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                Text(
-                    text = stringResource(id = R.string.elevated_card),
-                    style = MaterialTheme.typography.titleLarge,
-                )
-            }
-        }
-
-        OutlinedCard(
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant,
-            ),
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(IntrinsicSize.Min)
-                .wrapContentHeight()
-        ) {
-            Column(
-                modifier = Modifier
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                Text(
-                    text = stringResource(id = R.string.outlined_card),
-                    style = MaterialTheme.typography.titleLarge,
-                )
+                    .fillMaxWidth()
+                    .height(IntrinsicSize.Min)
+                    .wrapContentHeight()
+            ) {
+                Column(
+                    modifier = Modifier
+                        .padding(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    Text(
+                        text = String.format("%s %d", stringResource(id = R.string.simple_card), it),
+                        style = MaterialTheme.typography.titleLarge,
+                    )
+                    if (it % 2 == 0)  {
+                        Text(
+                            text = String.shortLoremIpsum(),
+                            style = MaterialTheme.typography.labelSmall,
+                        )
+                    }
+                }
             }
         }
     }

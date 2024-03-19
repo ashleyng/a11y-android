@@ -27,13 +27,13 @@ enum class ComponentItem: ListRow {
             return when (this) {
                 Button -> "button"
                 Card -> "card"
-                Chip -> "chip"
-                Dialog -> "dialog"
-                ProgressIndicator -> "progressIndicator"
+                Chip -> null
+                Dialog -> null
+                ProgressIndicator -> null
                 Slider -> "slider"
                 Switch -> "switch"
-                BottomSheet -> "bottomSheet"
-                FloatingActionButton -> "floatingActionButton"
+                BottomSheet -> null
+                FloatingActionButton -> null
             }
         }
 

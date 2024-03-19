@@ -26,7 +26,7 @@ enum class ListListItem: ListRow {
             return when (this) {
                 Reorderable -> null
                 Carousel -> "carousel"
-                Collection -> "collection"
+                Collection -> null
             }
         }
 
@@ -34,7 +34,7 @@ enum class ListListItem: ListRow {
         return when (this) {
             Reorderable -> context.getString(R.string.reorderable)
             Carousel -> context.getString(R.string.carousel)
-            Collection -> context.getString(R.string.collection)
+            Collection -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.collection))
         }
     }
 

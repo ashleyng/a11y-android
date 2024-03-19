@@ -3,8 +3,8 @@
     <string name="reorderable">Reorderable</string>
     <string name="carousel">Carousel</string>
     <string name="collection">Collection</string>
-    <string name="reorderable_custom_implementation">Reorderable list not possible without custom implementation</string>
-    <string name="carousel_page_implementation">Carousel pager and Talkback does not work out of the box and requires some custom implementation</string>
+    <string name="reorderable_custom_implementation">Reorderable list not possible without a completely custom implementation</string>
+    <string name="carousel_page_implementation">Does not work with Talkback without custom implementation. MaterialDesign3 native implementation is in progress</string>
     <string name="lists">Lists</string>
     <string name="components">Components</string>
     <string name="string">String</string>
