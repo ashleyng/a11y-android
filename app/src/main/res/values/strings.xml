@@ -20,4 +20,11 @@
     <string name="filled_button">Filled</string>
     <string name="coming_soon">%1$s - Coming Soon</string>
     <string name="floating_action_button">Floating action button</string>
+    <string name="card_combine_semantics">This card added the settings to combine elements.</string>
+    <string name="card_not_combine">This card does not combine elements by default.</string>
+    <string name="simple_card">Simple Card</string>
+    <string name="complex_card">Complex Card</string>
+    <string name="complex_card_sub">Complex Card Subheading</string>
+    <string name="elevated_card">Elevated Card</string>
+    <string name="outlined_card">Outlined Card</string>
 </resources>

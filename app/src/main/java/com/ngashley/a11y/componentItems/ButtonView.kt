@@ -19,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ngashley.a11y.R
+import com.ngashley.a11y.common.shortLoremIpsum
 
 @Composable
 fun ButtonView(modifier: Modifier = Modifier) {
@@ -43,7 +44,7 @@ fun ButtonView(modifier: Modifier = Modifier) {
         }
 
         Button(onClick = {  }) {
-            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus.")
+            Text(String.shortLoremIpsum())
         }
 
         Column {

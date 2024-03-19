@@ -40,7 +40,7 @@ enum class ComponentItem: ListRow {
     override fun titleString(context: Context): String {
         return when (this) {
             Button -> context.getString(R.string.button)
-            Card -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.card))
+            Card -> context.getString(R.string.card)
             Chip -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.chip))
             Dialog -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.dialog_str))
             ProgressIndicator -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.progress_indicator))
@@ -55,7 +55,7 @@ enum class ComponentItem: ListRow {
     fun DestinationView(navController: NavController) {
         when (this) {
             Button -> ButtonView()
-            Card -> "card"
+            Card -> CardView()
             Chip -> "chip"
             Dialog -> "dialog"
             ProgressIndicator -> "progressIndicator"
