@@ -17,10 +17,26 @@ enum class ComponentItem: ListRow {
     Slider,
     Switch,
     BottomSheet,
+    DatePicker,
+    Tabs,
+    SegmentedButton,
     FloatingActionButton;
 
     override val subtitleString: ResId?
-        get() = null
+        get() {
+            return when (this) {
+                DatePicker -> {
+                    R.string.date_picker_description
+                }
+                SegmentedButton -> {
+                    R.string.segmented_button_description
+                }
+                Button, Card, Chip, Dialog, ProgressIndicator, Slider,
+                    Switch, BottomSheet, FloatingActionButton, Tabs -> {
+                        null
+                    }
+            }
+        }
 
     override val destinationKey: String?
         get() {
@@ -33,6 +49,9 @@ enum class ComponentItem: ListRow {
                 Slider -> "slider"
                 Switch -> "switch"
                 BottomSheet -> null
+                DatePicker -> null
+                Tabs -> "tabs"
+                SegmentedButton -> null
                 FloatingActionButton -> null
             }
         }
@@ -47,6 +66,9 @@ enum class ComponentItem: ListRow {
             Slider -> context.getString(R.string.slider)
             Switch -> context.getString(R.string.switch_str)
             BottomSheet -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.bottom_sheet))
+            DatePicker -> context.getString(R.string.date_picker)
+            Tabs -> context.getString(R.string.tabs)
+            SegmentedButton -> context.getString(R.string.segmented_button)
             FloatingActionButton -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.floating_action_button))
         }
     }
@@ -62,6 +84,9 @@ enum class ComponentItem: ListRow {
             Slider -> SliderView()
             Switch -> SwitchView()
             BottomSheet -> "bottomSheet"
+            DatePicker -> "datePicker"
+            Tabs -> TabsView()
+            SegmentedButton -> "segmentedButton"
             FloatingActionButton -> "floatingActionButton"
         }
     }

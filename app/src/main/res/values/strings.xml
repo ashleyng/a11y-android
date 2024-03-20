@@ -27,4 +27,12 @@
     <string name="complex_card_sub">Complex Card Subheading</string>
     <string name="elevated_card">Elevated Card</string>
     <string name="outlined_card">Outlined Card</string>
+    <string name="date_picker">Date Picker</string>
+    <string name="date_picker_description">Date picker is not currently implemented for Material Design 3.</string>
+    <string name="tabs">Tabs</string>
+    <string name="primary_tab">Primary Tab Type</string>
+    <string name="secondary_tab">Secondary Tab Type</string>
+    <string name="scrollable_tab">Scrollable Tab Type</string>
+    <string name="segmented_button_description">Segmented buttons are not currently implemented for Material Design 3</string>
+    <string name="segmented_button">Segmented Button</string>
 </resources>
