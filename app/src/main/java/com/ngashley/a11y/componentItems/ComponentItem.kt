@@ -13,7 +13,7 @@ enum class ComponentItem: ListRow {
     Card,
     Chip,
     Dialog,
-    ProgressIndicator,
+    //    ProgressIndicator, // TODO: Think through notification completion announcements
     Slider,
     Switch,
     BottomSheet,
@@ -31,8 +31,8 @@ enum class ComponentItem: ListRow {
                 SegmentedButton -> {
                     R.string.segmented_button_description
                 }
-                Button, Card, Chip, Dialog, ProgressIndicator, Slider,
                     Switch, BottomSheet, FloatingActionButton, Tabs -> {
+                Button, Card, Chip, Dialog, Slider,
                         null
                     }
             }
@@ -43,9 +43,9 @@ enum class ComponentItem: ListRow {
             return when (this) {
                 Button -> "button"
                 Card -> "card"
-                Chip -> null
+                Chip -> "chip"
                 Dialog -> null
-                ProgressIndicator -> null
+//                ProgressIndicator -> null
                 Slider -> "slider"
                 Switch -> "switch"
                 BottomSheet -> null
@@ -60,9 +60,9 @@ enum class ComponentItem: ListRow {
         return when (this) {
             Button -> context.getString(R.string.button)
             Card -> context.getString(R.string.card)
-            Chip -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.chip))
+            Chip -> context.getString(R.string.chip)
             Dialog -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.dialog_str))
-            ProgressIndicator -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.progress_indicator))
+//            ProgressIndicator -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.progress_indicator))
             Slider -> context.getString(R.string.slider)
             Switch -> context.getString(R.string.switch_str)
             BottomSheet -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.bottom_sheet))
@@ -78,9 +78,9 @@ enum class ComponentItem: ListRow {
         when (this) {
             Button -> ButtonView()
             Card -> CardView()
-            Chip -> "chip"
+            Chip -> ChipView()
             Dialog -> "dialog"
-            ProgressIndicator -> "progressIndicator"
+//            ProgressIndicator -> "progressIndicator"
             Slider -> SliderView()
             Switch -> SwitchView()
             BottomSheet -> "bottomSheet"

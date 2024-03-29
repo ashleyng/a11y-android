@@ -35,4 +35,12 @@
     <string name="scrollable_tab">Scrollable Tab Type</string>
     <string name="segmented_button_description">Segmented buttons are not currently implemented for Material Design 3</string>
     <string name="segmented_button">Segmented Button</string>
+    <string name="checkbox">Checkbox</string>
+    <string name="cheese">Cheese</string>
+    <string name="pepperoni">Pepperoni</string>
+    <string name="pineapple">Pineapple</string>
+    <string name="peppers">Peppers</string>
+    <string name="mushrooms">Mushrooms</string>
+    <string name="scrollable_chips">Horizontally Scrollable Chips</string>
+    <string name="wrapped_chips">Multi-line Chips</string>
 </resources>

@@ -18,8 +18,8 @@ interface ListRow {
 
 enum class MainListItem: ListRow {
     Lists,
-    Components,
-    Strings;
+    Components;
+//    Strings;
 
     override val subtitleString: ResId?
         get() = null
@@ -29,7 +29,7 @@ enum class MainListItem: ListRow {
             return when (this) {
                 Lists -> "lists"
                 Components -> "components"
-                Strings -> "strings"
+//                Strings -> "strings"
             }
         }
 
@@ -37,7 +37,7 @@ enum class MainListItem: ListRow {
         return when (this) {
             Lists -> context.getString(R.string.lists)
             Components -> context.getString(R.string.components)
-            Strings -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.string))
+//            Strings -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.string))
         }
     }
 
@@ -46,7 +46,7 @@ enum class MainListItem: ListRow {
         when (this) {
             Lists -> CommonList(items = ListListItem.entries, navController = navController)
             Components -> CommonList(items = ComponentItem.entries, navController = navController)
-            Strings -> CommonList(items = ListListItem.entries, navController = navController)
+//            Strings -> CommonList(items = ListListItem.entries, navController = navController)
         }
     }
 }
