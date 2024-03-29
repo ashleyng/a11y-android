@@ -48,7 +48,7 @@ enum class ComponentItem: ListRow {
 //                ProgressIndicator -> null
                 Slider -> "slider"
                 Switch -> "switch"
-                BottomSheet -> null
+                BottomSheet -> "bottomsheet"
                 DatePicker -> null
                 Tabs -> "tabs"
                 SegmentedButton -> null
@@ -65,7 +65,7 @@ enum class ComponentItem: ListRow {
 //            ProgressIndicator -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.progress_indicator))
             Slider -> context.getString(R.string.slider)
             Switch -> context.getString(R.string.switch_str)
-            BottomSheet -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.bottom_sheet))
+            BottomSheet -> context.getString(R.string.bottom_sheet)
             DatePicker -> context.getString(R.string.date_picker)
             Tabs -> context.getString(R.string.tabs)
             SegmentedButton -> context.getString(R.string.segmented_button)
@@ -83,7 +83,7 @@ enum class ComponentItem: ListRow {
 //            ProgressIndicator -> "progressIndicator"
             Slider -> SliderView()
             Switch -> SwitchView()
-            BottomSheet -> "bottomSheet"
+            BottomSheet -> BottomSheetView()
             DatePicker -> "datePicker"
             Tabs -> TabsView()
             SegmentedButton -> "segmentedButton"

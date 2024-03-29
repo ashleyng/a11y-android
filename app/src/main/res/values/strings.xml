@@ -43,4 +43,7 @@
     <string name="mushrooms">Mushrooms</string>
     <string name="scrollable_chips">Horizontally Scrollable Chips</string>
     <string name="wrapped_chips">Multi-line Chips</string>
+    <string name="show_bottom_sheet">Show bottom sheet</string>
+    <string name="hide_bottom_sheet">Hide bottom sheet</string>
+    <string name="bottom_sheet_padding">The bottom sheet does not have a native way to add bottom padding to not overlap the bottom system buttons. An additional Spacer element is manually added in the code.</string>
 </resources>
