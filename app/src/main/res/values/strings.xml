@@ -46,4 +46,20 @@
     <string name="show_bottom_sheet">Show bottom sheet</string>
     <string name="hide_bottom_sheet">Hide bottom sheet</string>
     <string name="bottom_sheet_padding">The bottom sheet does not have a native way to add bottom padding to not overlap the bottom system buttons. An additional Spacer element is manually added in the code.</string>
+    <string name="about">About</string>
+    <string name="about_settings_shortcuts">About Settings &amp; Shortcuts</string>
+    <string name="settings_shortcuts">Settings &amp; Shortcuts</string>
+    <string name="about_app1">I wanted to create an app for developers, designers, or anyone in the mobile app industry to have an easy way to see what native accessibility implementations looked like. No extra fluff of an App’s special theming or custom implementations from internal components to 3rd party libraries.</string>
+    <string name="about_app2">For the designers you can see (or hear) what native components are available and what they provide with minimal to no customization (straight out of the box).</string>
+    <string name="about_app3">For developers you can see what APIs are available to use as well as how to use them, and an easy simple app to use as a playground.</string>
+    <string name="about_app4">A11y (pronounced Ally) is an open source app that is available on GitHub(%1$s) with an MIT License.</string>
+    <string name="shortcuts1">Accessibility shortcuts and settings differ device to device. Note that the instructions provided are for Samsung devices. It’s advisable to search “accessibility settings” and your device model and manufacture for specific accessibility settings.</string>
+    <string name="shortcuts2">You can find the accessibility settings under Settings -> Accessibility (you also may need to install the accessibility apps for things such as Talkback and the Accessibility Scanner).</string>
+    <string name="shortcuts3">Here are some settings and apps I have found useful:</string>
+    <string name="shortcuts_title">Shortcuts</string>
+    <string name="shortcuts4">Accessibility shortcut settings can be found under Settings -> Accessibility -> Advanced Settings. I advise you have at least Talkback and the Accessibility menu shortcut setup here.</string>
+    <string name="accessibility_scanner_title">Accessibility Scanner</string>
+    <string name="shortcuts5">Android has the Accessibility Scanner app that can take audits of the app you’re using. It’s a good entry into understanding accessibility and what it takes to make things accessibility. It can catch things such as color contrast, dynamic font size, and missing content descriptions.</string>
+    <string name="remove_animation_title">Remove animation</string>
+    <string name="shortcuts6">The remove animation settings can be found under Settings -> Accessibility -> Vision enhancements</string>
 </resources>

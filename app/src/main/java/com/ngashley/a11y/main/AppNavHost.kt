@@ -33,6 +33,13 @@ fun AppNavHost(
                 item.DestinationView(navController = navController)
             }
         }
+        AboutMenuItem.entries.forEach { item ->
+            item.destinationKey?.let {
+                composable(it) {
+                    item.DestinationView(navController = navController)
+                }
+            }
+        }
 
         // LISTS
         ListListItem.entries.forEach { item ->

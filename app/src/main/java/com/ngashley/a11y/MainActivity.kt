@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.rememberNavController
 import com.ngashley.a11y.main.AppNavHost
+import com.ngashley.a11y.main.MoreMenuDropDownMenu
 import com.ngashley.a11y.ui.theme.A11yTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,6 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             A11yTheme {
                 // A surface container using the 'background' color from the theme
+                val navController = rememberNavController()
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -37,11 +39,14 @@ class MainActivity : ComponentActivity() {
                                 ),
                                 title = {
                                     Text(text = stringResource(id = R.string.app_name))
-                                }
+                                },
+                                actions = {
+                                    MoreMenuDropDownMenu(navController = navController)
+                                },
                             )
                         }
                     ) { innerPadding ->
-                        AppNavHost(innerPadding = innerPadding, navController = rememberNavController())
+                        AppNavHost(innerPadding = innerPadding, navController = navController)
                     }
                 }
             }
