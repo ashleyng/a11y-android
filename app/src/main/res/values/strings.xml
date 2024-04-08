@@ -70,4 +70,6 @@
     <string name="radio_button">Radio Button</string>
     <string name="radio_button_modifier">Accessibility for a radio button row is primarily handled by the `.selectable` modifier on the row.</string>
     <string name="check_box_modifier">Accessibility for the checkboxes row is primarily handles by the `.toggleable` modifier on the row.</string>
+    <string name="switch_modifier">Accessibility for the switch row is primarily handles by the `.toggleable` modifier on the row.</string>
+    <string name="heat_pizza">Heat pizza</string>
 </resources>
