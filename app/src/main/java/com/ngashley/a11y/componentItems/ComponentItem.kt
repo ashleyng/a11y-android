@@ -20,7 +20,8 @@ enum class ComponentItem: ListRow {
     DatePicker,
     Tabs,
     SegmentedButton,
-    FloatingActionButton;
+    FloatingActionButton,
+    CheckBox;
 
     override val subtitleString: ResId?
         get() {
@@ -31,8 +32,8 @@ enum class ComponentItem: ListRow {
                 SegmentedButton -> {
                     R.string.segmented_button_description
                 }
-                    Switch, BottomSheet, FloatingActionButton, Tabs -> {
                 Button, Card, Chip, Dialog, Slider,
+                    Switch, BottomSheet, FloatingActionButton, Tabs, CheckBox -> {
                         null
                     }
             }
@@ -53,6 +54,7 @@ enum class ComponentItem: ListRow {
                 Tabs -> "tabs"
                 SegmentedButton -> null
                 FloatingActionButton -> null
+                CheckBox -> "checkbox"
             }
         }
 
@@ -70,6 +72,7 @@ enum class ComponentItem: ListRow {
             Tabs -> context.getString(R.string.tabs)
             SegmentedButton -> context.getString(R.string.segmented_button)
             FloatingActionButton -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.floating_action_button))
+            CheckBox -> context.getString(R.string.checkbox)
         }
     }
 
@@ -88,6 +91,7 @@ enum class ComponentItem: ListRow {
             Tabs -> TabsView()
             SegmentedButton -> "segmentedButton"
             FloatingActionButton -> "floatingActionButton"
+            CheckBox -> CheckboxView()
         }
     }
 }
