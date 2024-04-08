@@ -44,7 +44,7 @@ enum class ComponentItem: ListRow {
                 Button -> "button"
                 Card -> "card"
                 Chip -> "chip"
-                Dialog -> null
+                Dialog -> "dialog"
 //                ProgressIndicator -> null
                 Slider -> "slider"
                 Switch -> "switch"
@@ -61,7 +61,7 @@ enum class ComponentItem: ListRow {
             Button -> context.getString(R.string.button)
             Card -> context.getString(R.string.card)
             Chip -> context.getString(R.string.chip)
-            Dialog -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.dialog_str))
+            Dialog -> context.getString(R.string.dialog_str)
 //            ProgressIndicator -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.progress_indicator))
             Slider -> context.getString(R.string.slider)
             Switch -> context.getString(R.string.switch_str)
@@ -79,7 +79,7 @@ enum class ComponentItem: ListRow {
             Button -> ButtonView()
             Card -> CardView()
             Chip -> ChipView()
-            Dialog -> "dialog"
+            Dialog -> DialogView()
 //            ProgressIndicator -> "progressIndicator"
             Slider -> SliderView()
             Switch -> SwitchView()

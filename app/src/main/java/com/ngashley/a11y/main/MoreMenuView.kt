@@ -27,7 +27,7 @@ fun MoreMenuDropDownMenu(navController: NavController) {
     }) {
         Icon(
             imageVector = Icons.Default.MoreVert,
-            contentDescription = "Localized description"
+            contentDescription = stringResource(id = R.string.more_menu)
         )
     }
 

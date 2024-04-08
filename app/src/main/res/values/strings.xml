@@ -62,4 +62,9 @@
     <string name="shortcuts5">Android has the Accessibility Scanner app that can take audits of the app you’re using. It’s a good entry into understanding accessibility and what it takes to make things accessibility. It can catch things such as color contrast, dynamic font size, and missing content descriptions.</string>
     <string name="remove_animation_title">Remove animation</string>
     <string name="shortcuts6">The remove animation settings can be found under Settings -> Accessibility -> Vision enhancements</string>
+    <string name="alert_dialog_example">Alert Dialog Example</string>
+    <string name="alert_confirm">Confirm</string>
+    <string name="alert_dismiss">Dismiss</string>
+    <string name="show_alert_dialog">Show alert dialog</string>
+    <string name="more_menu">More menu</string>
 </resources>
