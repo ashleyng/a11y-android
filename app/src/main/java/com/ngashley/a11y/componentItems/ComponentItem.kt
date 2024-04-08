@@ -2,6 +2,7 @@ package com.ngashley.a11y.componentItems
 
 import android.content.Context
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.ngashley.a11y.R
 import com.ngashley.a11y.common.ResId
@@ -21,7 +22,8 @@ enum class ComponentItem: ListRow {
     Tabs,
     SegmentedButton,
     FloatingActionButton,
-    CheckBox;
+    CheckBox,
+    RadioButton;
 
     override val subtitleString: ResId?
         get() {
@@ -32,8 +34,8 @@ enum class ComponentItem: ListRow {
                 SegmentedButton -> {
                     R.string.segmented_button_description
                 }
-                Button, Card, Chip, Dialog, Slider,
-                    Switch, BottomSheet, FloatingActionButton, Tabs, CheckBox -> {
+                Button, Card, Chip, Dialog, Slider, Switch, BottomSheet, FloatingActionButton,
+                Tabs, CheckBox, RadioButton -> {
                         null
                     }
             }
@@ -55,6 +57,7 @@ enum class ComponentItem: ListRow {
                 SegmentedButton -> null
                 FloatingActionButton -> null
                 CheckBox -> "checkbox"
+                RadioButton -> "radiobutton"
             }
         }
 
@@ -73,6 +76,7 @@ enum class ComponentItem: ListRow {
             SegmentedButton -> context.getString(R.string.segmented_button)
             FloatingActionButton -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.floating_action_button))
             CheckBox -> context.getString(R.string.checkbox)
+            RadioButton -> context.getString(R.string.radio_button)
         }
     }
 
@@ -92,6 +96,7 @@ enum class ComponentItem: ListRow {
             SegmentedButton -> "segmentedButton"
             FloatingActionButton -> "floatingActionButton"
             CheckBox -> CheckboxView()
+            RadioButton -> RadioButtonView()
         }
     }
 }

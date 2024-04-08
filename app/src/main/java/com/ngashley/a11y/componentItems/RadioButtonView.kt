@@ -5,9 +5,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.selection.toggleable
-import androidx.compose.material3.Checkbox
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -20,36 +21,36 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ngashley.a11y.R
 
-@Composable
-fun CheckboxView() {
-    val itemList: List<PizzaTopping> = PizzaTopping.entries
 
-    Column(
-        modifier = Modifier
-            .padding(16.dp),
+@Composable
+fun RadioButtonView() {
+    val itemList: List<PizzaTopping> = PizzaTopping.entries
+    val (selectedOption, onOptionSelected) = remember { mutableStateOf(itemList[0]) }
+
+    Column(modifier = Modifier
+        .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         Text(
-            text = stringResource(id = R.string.check_box_modifier)
+            text = stringResource(id = R.string.radio_button_modifier)
         )
-
         Column {
-            itemList.forEachIndexed { index, pizzaTopping ->
-                val (checkedState, onStateChange) = remember { mutableStateOf(false) }
+            itemList.forEach { pizzaTopping ->
                 Row(
                     modifier = Modifier
+                        .selectableGroup()
                         .fillMaxWidth()
-                        .toggleable(
-                            value = checkedState,
-                            onValueChange = { onStateChange(!checkedState) },
-                            role = Role.Checkbox
+                        .selectable(
+                            selected = (pizzaTopping == selectedOption),
+                            onClick = { onOptionSelected(pizzaTopping) },
+                            role = Role.RadioButton
                         )
                         .padding(16.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Checkbox(
-                        checked = checkedState,
-                        onCheckedChange = null, // TalkBack text handled by toggleable in outer Row
+                    RadioButton(
+                        selected = pizzaTopping == selectedOption,
+                        onClick = null, // accessibility is handled by the selectable modifier
                     )
                     Text(
                         text = stringResource(id = pizzaTopping.stringResId),
@@ -59,13 +60,13 @@ fun CheckboxView() {
                 }
             }
         }
-    }
 
+    }
 }
 
 @Preview
 @Composable
-private fun CheckboxPreview() {
-    CheckboxView()
+private fun RadioButtonPreview() {
+    RadioButtonView()
 }
 

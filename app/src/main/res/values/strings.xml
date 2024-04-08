@@ -67,4 +67,7 @@
     <string name="alert_dismiss">Dismiss</string>
     <string name="show_alert_dialog">Show alert dialog</string>
     <string name="more_menu">More menu</string>
+    <string name="radio_button">Radio Button</string>
+    <string name="radio_button_modifier">Accessibility for a radio button row is primarily handled by the `.selectable` modifier on the row.</string>
+    <string name="check_box_modifier">Accessibility for the checkboxes row is primarily handles by the `.toggleable` modifier on the row.</string>
 </resources>
