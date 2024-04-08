@@ -2,6 +2,7 @@ package com.ngashley.a11y.main
 
 import android.content.Context
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
 import com.ngashley.a11y.R
 import com.ngashley.a11y.common.CommonList
@@ -43,9 +44,14 @@ enum class MainListItem: ListRow {
 
     @Composable
     fun DestinationView(navController: NavController) {
+        val context = LocalContext.current
         when (this) {
-            Lists -> CommonList(items = ListListItem.entries, navController = navController)
-            Components -> CommonList(items = ComponentItem.entries, navController = navController)
+            Lists -> {
+                CommonList(items = ListListItem.entries.sortedBy { it.titleString(context = context) }, navController = navController)
+            }
+            Components -> {
+                CommonList(items = ComponentItem.entries.sortedBy { it.titleString(context = context) }, navController = navController)
+            }
 //            Strings -> CommonList(items = ListListItem.entries, navController = navController)
         }
     }

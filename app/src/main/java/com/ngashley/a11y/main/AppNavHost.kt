@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -18,6 +19,7 @@ fun AppNavHost(
     navController: NavHostController,
     startDestination: String = "main",
 ) {
+    val context = LocalContext.current
     NavHost(
         modifier = modifier
             .padding(innerPadding),
@@ -26,7 +28,9 @@ fun AppNavHost(
     ) {
         // MAIN LIST
         composable("main") {
-            CommonList(items = MainListItem.entries, navController = navController)
+            CommonList(
+                items = MainListItem.entries.sortedBy { it.titleString(context = context) },
+                navController = navController)
         }
         MainListItem.entries.forEach { item ->
             composable(item.destinationKey) {
