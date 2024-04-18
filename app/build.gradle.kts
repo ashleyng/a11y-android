@@ -11,7 +11,7 @@ android {
         applicationId = "com.ngashley.a11y"
         minSdk = 27
         targetSdk = 34
-        versionCode = 2
+        versionCode = 3
         versionName = "0.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
