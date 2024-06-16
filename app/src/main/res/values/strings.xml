@@ -52,7 +52,7 @@
     <string name="about_app1">I wanted to create an app for developers, designers, or anyone in the mobile app industry to have an easy way to see what native accessibility implementations looked like. No extra fluff of an App’s special theming or custom implementations from internal components to 3rd party libraries.</string>
     <string name="about_app2">For the designers you can see (or hear) what native components are available and what they provide with minimal to no customization (straight out of the box).</string>
     <string name="about_app3">For developers you can see what APIs are available to use as well as how to use them, and an easy simple app to use as a playground.</string>
-    <string name="about_app4">A11y (pronounced Ally) is an open source app that is available on GitHub(%1$s) with an MIT License.</string>
+    <string name="about_app4">A11y Example (pronounced Ally) is an open source app that is available on GitHub with an MIT License.</string>
     <string name="shortcuts1">Accessibility shortcuts and settings differ device to device. Note that the instructions provided are for Samsung devices. It’s advisable to search “accessibility settings” and your device model and manufacture for specific accessibility settings.</string>
     <string name="shortcuts2">You can find the accessibility settings under Settings -> Accessibility (you also may need to install the accessibility apps for things such as Talkback and the Accessibility Scanner).</string>
     <string name="shortcuts3">Here are some settings and apps I have found useful:</string>
@@ -72,4 +72,8 @@
     <string name="check_box_modifier">Accessibility for the checkboxes row is primarily handles by the `.toggleable` modifier on the row.</string>
     <string name="switch_modifier">Accessibility for the switch row is primarily handles by the `.toggleable` modifier on the row.</string>
     <string name="heat_pizza">Heat pizza</string>
+    <string name="tab_number">Tab %1$s</string>
+    <string name="long_tab_number">Tab %1$s with lots of text</string>
+    <string name="app_on_github">%1$s on %2$s</string>
+    <string name="tab_semantics">Each tab has manually set its content description. Since there are multiple tabs on the view, each tab in each section needs its own distinct content description.</string>
 </resources>
