@@ -19,6 +19,7 @@ enum class ComponentItem: ListRow {
     Switch,
     BottomSheet,
     DatePicker,
+    TimePicker,
     Tabs,
     SegmentedButton,
     FloatingActionButton,
@@ -31,7 +32,7 @@ enum class ComponentItem: ListRow {
                 SegmentedButton -> {
                     R.string.segmented_button_description
                 }
-                DatePicker, Button, Card, Chip, Dialog, Slider, Switch, BottomSheet, FloatingActionButton,
+                TimePicker, DatePicker, Button, Card, Chip, Dialog, Slider, Switch, BottomSheet, FloatingActionButton,
                 Tabs, CheckBox, RadioButton -> {
                         null
                     }
@@ -55,6 +56,7 @@ enum class ComponentItem: ListRow {
                 FloatingActionButton -> null
                 CheckBox -> "checkbox"
                 RadioButton -> "radiobutton"
+                TimePicker -> "timepicker"
             }
         }
 
@@ -74,6 +76,7 @@ enum class ComponentItem: ListRow {
             FloatingActionButton -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.floating_action_button))
             CheckBox -> context.getString(R.string.checkbox)
             RadioButton -> context.getString(R.string.radio_button)
+            TimePicker -> context.getString(R.string.time_picker)
         }
     }
 
@@ -90,10 +93,11 @@ enum class ComponentItem: ListRow {
             BottomSheet -> BottomSheetView()
             DatePicker -> DatePickerView()
             Tabs -> TabsView()
-            SegmentedButton -> "segmentedButton"
-            FloatingActionButton -> "floatingActionButton"
+            SegmentedButton -> "segmentedButton" // TODO
+            FloatingActionButton -> "floatingActionButton" // TODO
             CheckBox -> CheckboxView()
             RadioButton -> RadioButtonView()
+            TimePicker -> TimePickerView()
         }
     }
 }

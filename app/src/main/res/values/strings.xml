@@ -84,4 +84,10 @@
     <string name="no_date_selected">No date selected</string>
     <string name="selected_date">Selected Date: %1$s</string>
     <string name="restricted_date">Restricted date selection</string>
+    <string name="time_picker">Time Picker</string>
+    <string name="dial_time_picker_24h">Dial time picker (24h)</string>
+    <string name="selected_time">Selected Time: %1$s</string>
+    <string name="dial_time_picker_am_pm">Dial time picker (AM/PM)</string>
+    <string name="input_time_picker_24h">Input time picker (24h)</string>
+    <string name="input_time_picker_am_pm">Input time picker (AM/PM)</string>
 </resources>
