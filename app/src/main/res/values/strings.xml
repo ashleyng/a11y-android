@@ -4,7 +4,7 @@
     <string name="carousel">Carousel</string>
     <string name="collection">Collection</string>
     <string name="reorderable_custom_implementation">Reorderable list not possible without a completely custom implementation</string>
-    <string name="carousel_page_implementation">Does not work with Talkback without custom implementation. MaterialDesign3 native implementation is in progress</string>
+    <string name="carousel_page_implementation">Does not work with Talkback without custom implementation.</string>
     <string name="lists">Lists</string>
     <string name="components">Components</string>
     <string name="string">String</string>
@@ -93,4 +93,12 @@
     <string name="fonts_string_title">Font Sizes and Strings</string>
     <string name="font_sizes">Font Sizes</string>
     <string name="font_size_description">Font sizes used are the default Material Design Theme. This is to show case how each style scales in comparison to one another with Android\'s nonlinear scaling curve.</string>
+    <string name="horizontal_pager_carousel">Horizontal Pager Carousel</string>
+    <string name="multibrowser_carousel">Multibrowse Carousel</string>
+    <string name="uncontained_carousel">Uncontained carousel</string>
+    <string name="sunset_1_content_description">Blue, purple, red and orange sunset with a tree.</string>
+    <string name="sunset_2_content_description">Sunset with a halo.</string>
+    <string name="sunset_3_content_description">Orange sun with a tree.</string>
+    <string name="sunset_4_content_description">Sunset with clouds blocking sun.</string>
+    <string name="lily_photo_content_description">Lily pads and a flower in water.</string>
 </resources>

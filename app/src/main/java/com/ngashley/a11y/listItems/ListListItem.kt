@@ -9,6 +9,7 @@ import com.ngashley.a11y.main.ListRow
 
 enum class ListListItem: ListRow {
     Reorderable,
+    HorizontalPager,
     Carousel,
     Collection;
 
@@ -16,7 +17,7 @@ enum class ListListItem: ListRow {
         get() {
             return when (this) {
                 Reorderable -> R.string.reorderable_custom_implementation
-                Carousel -> R.string.carousel_page_implementation
+                HorizontalPager, Carousel -> R.string.carousel_page_implementation
                 Collection -> null
             }
         }
@@ -25,16 +26,18 @@ enum class ListListItem: ListRow {
         get() {
             return when (this) {
                 Reorderable -> null
-                Carousel -> "carousel"
+                HorizontalPager -> "horizontalpager"
                 Collection -> null
+                Carousel -> "carousel"
             }
         }
 
     override fun titleString(context: Context): String {
         return when (this) {
             Reorderable -> context.getString(R.string.reorderable)
-            Carousel -> context.getString(R.string.carousel)
+            HorizontalPager -> context.getString(R.string.horizontal_pager_carousel)
             Collection -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.collection))
+            Carousel -> context.getString(R.string.carousel)
         }
     }
 
@@ -42,8 +45,9 @@ enum class ListListItem: ListRow {
     fun DestinationView(navController: NavController) {
         when (this) {
             Reorderable -> "reorderable"
-            Carousel -> Carousel()
+            HorizontalPager -> HorizontalPagerView()
             Collection -> "collection"
+            Carousel -> CarouselView()
         }
     }
 }
