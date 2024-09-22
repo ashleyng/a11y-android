@@ -28,13 +28,10 @@ enum class ComponentItem: ListRow {
     override val subtitleString: ResId?
         get() {
             return when (this) {
-                DatePicker -> {
-                    R.string.date_picker_description
-                }
                 SegmentedButton -> {
                     R.string.segmented_button_description
                 }
-                Button, Card, Chip, Dialog, Slider, Switch, BottomSheet, FloatingActionButton,
+                DatePicker, Button, Card, Chip, Dialog, Slider, Switch, BottomSheet, FloatingActionButton,
                 Tabs, CheckBox, RadioButton -> {
                         null
                     }
@@ -52,7 +49,7 @@ enum class ComponentItem: ListRow {
                 Slider -> "slider"
                 Switch -> "switch"
                 BottomSheet -> "bottomsheet"
-                DatePicker -> null
+                DatePicker -> "datepicker"
                 Tabs -> "tabs"
                 SegmentedButton -> null
                 FloatingActionButton -> null
@@ -91,7 +88,7 @@ enum class ComponentItem: ListRow {
             Slider -> SliderView()
             Switch -> SwitchView()
             BottomSheet -> BottomSheetView()
-            DatePicker -> "datePicker"
+            DatePicker -> DatePickerView()
             Tabs -> TabsView()
             SegmentedButton -> "segmentedButton"
             FloatingActionButton -> "floatingActionButton"

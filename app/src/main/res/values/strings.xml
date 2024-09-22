@@ -76,4 +76,12 @@
     <string name="long_tab_number">Tab %1$s with lots of text</string>
     <string name="app_on_github">%1$s on %2$s</string>
     <string name="tab_semantics">Each tab has manually set its content description. Since there are multiple tabs on the view, each tab in each section needs its own distinct content description.</string>
+    <string name="modal_date_picker">Modal date picker</string>
+    <string name="input_modal_date_picker">Input modal date picker</string>
+    <string name="date_picker_range">Date picker with range</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_date_selected">No date selected</string>
+    <string name="selected_date">Selected Date: %1$s</string>
+    <string name="restricted_date">Restricted date selection</string>
 </resources>
