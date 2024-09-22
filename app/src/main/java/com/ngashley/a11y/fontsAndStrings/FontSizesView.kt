@@ -58,21 +58,21 @@ enum class FontSizeType {
 
     fun stringTitle(context: Context): String {
         return when (this) {
-            DisplayLarge -> "Display Large"
-            DisplayMedium -> "Display Medium"
-            DisplaySmall -> "Display Small"
-            HeadlineLarge -> "Headline Large"
-            HeadlineMedium -> "Headline Medium"
-            HeadlineSmall -> "Headline Small"
-            TitleLarge -> "Title Large"
-            TitleMedium -> "Title Medium"
-            TitleSmall -> "Title Small"
-            BodyLarge -> "Body Large"
-            BodyMedium -> "Body Medium"
-            BodySmall -> "Body Small"
-            LabelLarge -> "Label Large"
-            LabelMedium -> "Label Medium"
-            LabelSmall -> "Label Small"
+            DisplayLarge -> context.getString(R.string.display_large)
+            DisplayMedium -> context.getString(R.string.display_medium)
+            DisplaySmall -> context.getString(R.string.display_small)
+            HeadlineLarge -> context.getString(R.string.headline_large)
+            HeadlineMedium -> context.getString(R.string.headline_medium)
+            HeadlineSmall -> context.getString(R.string.headline_small)
+            TitleLarge -> context.getString(R.string.title_large)
+            TitleMedium -> context.getString(R.string.title_medium)
+            TitleSmall -> context.getString(R.string.title_small)
+            BodyLarge -> context.getString(R.string.body_large)
+            BodyMedium -> context.getString(R.string.body_medium)
+            BodySmall -> context.getString(R.string.body_small)
+            LabelLarge -> context.getString(R.string.label_large)
+            LabelMedium -> context.getString(R.string.label_medium)
+            LabelSmall -> context.getString(R.string.label_small)
         }
     }
 }

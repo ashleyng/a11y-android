@@ -101,4 +101,19 @@
     <string name="sunset_3_content_description">Orange sun with a tree.</string>
     <string name="sunset_4_content_description">Sunset with clouds blocking sun.</string>
     <string name="lily_photo_content_description">Lily pads and a flower in water.</string>
+    <string name="display_large">Display Larger</string>
+    <string name="display_medium">Display Medium</string>
+    <string name="display_small">Display Small</string>
+    <string name="headline_large">Headline Larger</string>
+    <string name="headline_medium">Headline Medium</string>
+    <string name="headline_small">Headline Small</string>
+    <string name="title_large">Title Large</string>
+    <string name="title_medium">Title Medium</string>
+    <string name="title_small">Title Small</string>
+    <string name="body_large">Body Large</string>
+    <string name="body_medium">Body Medium</string>
+    <string name="body_small">Body Small</string>
+    <string name="label_large">Label Large</string>
+    <string name="label_medium">Label Medium</string>
+    <string name="label_small">Label Small</string>
 </resources>
