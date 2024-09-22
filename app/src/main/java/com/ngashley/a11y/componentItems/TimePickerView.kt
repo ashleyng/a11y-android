@@ -116,9 +116,9 @@ private fun getTimeDisplay(is24Hour: Boolean, hour: Int, min: Int): String {
     val formater = DateTimeFormatter.ofPattern("H:m")
     val selectedDateTime = formater.parse("$hour:$min")
     val formatter = if (is24Hour) {
-        DateTimeFormatter.ofPattern("hh:mm a")
-    } else {
         DateTimeFormatter.ofPattern("HH:mm")
+    } else {
+        DateTimeFormatter.ofPattern("hh:mm a")
     }
     return stringResource(id = R.string.selected_time, formatter.format(selectedDateTime))
 }
