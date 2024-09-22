@@ -1,17 +1,22 @@
 package com.ngashley.a11y.main
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.ngashley.a11y.common.CommonList
+import com.ngashley.a11y.common.ListHeader
+import com.ngashley.a11y.common.ListItem
 import com.ngashley.a11y.componentItems.ComponentItem
 import com.ngashley.a11y.listItems.ListListItem
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
@@ -28,9 +33,17 @@ fun AppNavHost(
     ) {
         // MAIN LIST
         composable("main") {
-            CommonList(
-                items = MainListItem.entries.sortedBy { it.titleString(context = context) },
-                navController = navController)
+            LazyColumn {
+                MainListItem.entries.forEach { mainList ->
+                    stickyHeader {
+                        ListHeader(string = mainList.titleString(context))
+                    }
+
+                   items(mainList.items) { item ->
+                        ListItem(navController = navController, item = item)
+                    }
+                }
+            }
         }
         MainListItem.entries.forEach { item ->
             composable(item.destinationKey) {
@@ -61,7 +74,5 @@ fun AppNavHost(
                 }
             }
         }
-
-
     }
 }

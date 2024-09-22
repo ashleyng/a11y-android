@@ -34,6 +34,14 @@ enum class MainListItem: ListRow {
             }
         }
 
+    val items: List<ListRow>
+        get() {
+            return when (this) {
+                Lists -> ListListItem.entries
+                Components -> ComponentItem.entries
+            }
+        }
+
     override fun titleString(context: Context): String {
         return when (this) {
             Lists -> context.getString(R.string.lists)
