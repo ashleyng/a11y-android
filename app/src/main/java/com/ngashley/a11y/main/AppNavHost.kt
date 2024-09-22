@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import com.ngashley.a11y.common.ListHeader
 import com.ngashley.a11y.common.ListItem
 import com.ngashley.a11y.componentItems.ComponentItem
+import com.ngashley.a11y.fontsAndStrings.FontsAndStringsListItem
 import com.ngashley.a11y.listItems.ListListItem
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -39,17 +40,13 @@ fun AppNavHost(
                         ListHeader(string = mainList.titleString(context))
                     }
 
-                   items(mainList.items) { item ->
+                   items(mainList.items(context)) { item ->
                         ListItem(navController = navController, item = item)
                     }
                 }
             }
         }
-        MainListItem.entries.forEach { item ->
-            composable(item.destinationKey) {
-                item.DestinationView(navController = navController)
-            }
-        }
+
         AboutMenuItem.entries.forEach { item ->
             item.destinationKey?.let {
                 composable(it) {
@@ -68,6 +65,14 @@ fun AppNavHost(
         }
         
         ComponentItem.entries.forEach { item ->
+            item.destinationKey?.let {
+                composable(it) {
+                    item.DestinationView(navController = navController)
+                }
+            }
+        }
+
+        FontsAndStringsListItem.entries.forEach { item ->
             item.destinationKey?.let {
                 composable(it) {
                     item.DestinationView(navController = navController)

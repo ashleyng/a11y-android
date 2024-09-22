@@ -90,4 +90,7 @@
     <string name="dial_time_picker_am_pm">Dial time picker (AM/PM)</string>
     <string name="input_time_picker_24h">Input time picker (24h)</string>
     <string name="input_time_picker_am_pm">Input time picker (AM/PM)</string>
+    <string name="fonts_string_title">Font Sizes and Strings</string>
+    <string name="font_sizes">Font Sizes</string>
+    <string name="font_size_description">Font sizes used are the default Material Design Theme. This is to show case how each style scales in comparison to one another with Android\'s nonlinear scaling curve.</string>
 </resources>

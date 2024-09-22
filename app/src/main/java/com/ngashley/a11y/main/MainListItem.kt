@@ -8,6 +8,7 @@ import com.ngashley.a11y.R
 import com.ngashley.a11y.common.CommonList
 import com.ngashley.a11y.common.ResId
 import com.ngashley.a11y.componentItems.ComponentItem
+import com.ngashley.a11y.fontsAndStrings.FontsAndStringsListItem
 import com.ngashley.a11y.listItems.ListListItem
 
 interface ListRow {
@@ -17,10 +18,10 @@ interface ListRow {
     fun titleString(context: Context): String
 }
 
-enum class MainListItem: ListRow {
+enum class MainListItem : ListRow {
     Lists,
-    Components;
-//    Strings;
+    Components,
+    FontsStrings;
 
     override val subtitleString: ResId?
         get() = null
@@ -30,37 +31,26 @@ enum class MainListItem: ListRow {
             return when (this) {
                 Lists -> "lists"
                 Components -> "components"
-//                Strings -> "strings"
+                FontsStrings -> "strings"
             }
         }
 
-    val items: List<ListRow>
-        get() {
-            return when (this) {
-                Lists -> ListListItem.entries
-                Components -> ComponentItem.entries
+    fun items(context: Context): List<ListRow> {
+        return when (this) {
+            Lists -> ListListItem.entries.sortedBy {
+                it.titleString(context = context)
             }
+
+            Components -> ComponentItem.entries.sortedBy { it.titleString(context = context) }
+            FontsStrings -> FontsAndStringsListItem.entries
         }
+    }
 
     override fun titleString(context: Context): String {
         return when (this) {
             Lists -> context.getString(R.string.lists)
             Components -> context.getString(R.string.components)
-//            Strings -> String.format(context.getString(R.string.coming_soon), context.getString(R.string.string))
-        }
-    }
-
-    @Composable
-    fun DestinationView(navController: NavController) {
-        val context = LocalContext.current
-        when (this) {
-            Lists -> {
-                CommonList(items = ListListItem.entries.sortedBy { it.titleString(context = context) }, navController = navController)
-            }
-            Components -> {
-                CommonList(items = ComponentItem.entries.sortedBy { it.titleString(context = context) }, navController = navController)
-            }
-//            Strings -> CommonList(items = ListListItem.entries, navController = navController)
+            FontsStrings -> context.getString(R.string.fonts_string_title)
         }
     }
 }
