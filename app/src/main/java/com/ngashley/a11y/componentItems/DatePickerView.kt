@@ -32,23 +32,11 @@ import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 import java.util.Date
 import java.util.Locale
+import kotlin.math.abs
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DatePickerView(modifier: Modifier = Modifier) {
-    var showModalDatePicker by remember { mutableStateOf(false) }
-    val modalDatePickerState = rememberDatePickerState()
-    val selectedModalDateString = getDateString(millis = modalDatePickerState.selectedDateMillis)
-
-    var showInputDatePicker by remember { mutableStateOf(false) }
-    val inputDatePickerState = rememberDatePickerState()
-    val inputDateString = getDateString(millis = inputDatePickerState.selectedDateMillis)
-
-    var showRestrictedDatePicker by remember { mutableStateOf(false) }
-    val restrictedDatePickerState = rememberDatePickerState()
-    val restrictedDateString = getDateString(millis = restrictedDatePickerState.selectedDateMillis)
-
-
     Column(
         modifier = modifier
             .verticalScroll(rememberScrollState())
@@ -59,74 +47,67 @@ fun DatePickerView(modifier: Modifier = Modifier) {
 
         Column {
             // Modal date picker
-            TitleSubtitle(
-                modifier = Modifier
-                    .clickable {
-                        showModalDatePicker = true
-                    },
+            DatePickerRow(
+                displayMode = DisplayMode.Picker,
                 title = stringResource(id = R.string.modal_date_picker),
-                subtitle = selectedModalDateString
+                selectableDates = DatePickerDefaults.AllDates
             )
-            if (showModalDatePicker) {
-                DatePickerModal(
-                    initialDisplayMode = DisplayMode.Picker,
-                    selectableDates = DatePickerDefaults.AllDates,
-                    onDateSelected = { millis ->
-                        modalDatePickerState.selectedDateMillis = millis
-                    },
-                    onDismiss = {
-                        showModalDatePicker = false
-                    })
-            }
 
             // Modal input picker
-            TitleSubtitle(
-                modifier = Modifier
-                    .clickable {
-                        showInputDatePicker = true
-                    },
+            DatePickerRow(
+                displayMode = DisplayMode.Input,
                 title = stringResource(id = R.string.input_modal_date_picker),
-                subtitle = inputDateString
+                selectableDates = DatePickerDefaults.AllDates
             )
-            if (showInputDatePicker) {
-                DatePickerModal(
-                    initialDisplayMode = DisplayMode.Input,
-                    selectableDates = DatePickerDefaults.AllDates,
-                    onDateSelected = { millis ->
-                        inputDatePickerState.selectedDateMillis = millis
-                    }, onDismiss = {
-                        showInputDatePicker = false
-                    })
-            }
 
             // Restricted input picker
-            TitleSubtitle(
-                modifier = Modifier
-                    .clickable {
-                        showRestrictedDatePicker = true
-                    },
+            DatePickerRow(
+                displayMode = DisplayMode.Picker,
                 title = stringResource(id = R.string.restricted_date),
-                subtitle = restrictedDateString
+                selectableDates = TwoWeekPastSelectableDates
             )
-            if (showRestrictedDatePicker) {
-                DatePickerModal(
-                    initialDisplayMode = DisplayMode.Picker,
-                    selectableDates = TwoWeekPastSelectableDates,
-                    onDateSelected = { millis ->
-                        restrictedDatePickerState.selectedDateMillis = millis
-                    }, onDismiss = {
-                        showRestrictedDatePicker = false
-                    })
-            }
         }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun DatePickerRow(
+    displayMode: DisplayMode,
+    title: String,
+    selectableDates: SelectableDates
+) {
+    var showDatePicker by remember { mutableStateOf(false) }
+    val datePickerState = rememberDatePickerState()
+    val dateString = getDateString(millis = datePickerState.selectedDateMillis)
+
+    TitleSubtitle(
+        modifier = Modifier
+            .clickable {
+                showDatePicker = true
+            },
+        title = title,
+        subtitle = dateString
+    )
+    if (showDatePicker) {
+        DatePickerModal(
+            initialDisplayMode = displayMode,
+            selectableDates = selectableDates,
+            onDateSelected = { millis ->
+                datePickerState.selectedDateMillis = millis
+            }, onDismiss = {
+                showDatePicker = false
+            })
     }
 }
 
 @ExperimentalMaterial3Api
 object TwoWeekPastSelectableDates: SelectableDates {
     override fun isSelectableDate(utcTimeMillis: Long): Boolean {
-        val days = ChronoUnit.DAYS.between(Instant.ofEpochMilli(utcTimeMillis), Instant.ofEpochMilli(System.currentTimeMillis()))
-        return days <= 14
+        val selectedTime = Instant.ofEpochMilli(utcTimeMillis)
+        val nowTime = Instant.ofEpochMilli(System.currentTimeMillis())
+        val days = ChronoUnit.DAYS.between(selectedTime, nowTime)
+        return abs(days) <= 14
     }
 
     override fun isSelectableYear(year: Int): Boolean {
