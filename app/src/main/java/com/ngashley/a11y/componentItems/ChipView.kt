@@ -25,7 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ngashley.a11y.R
-import com.ngashley.a11y.common.ResId
+import com.ngashley.a11y.common.PizzaTopping
 
 @Composable
 fun ChipView(modifier: Modifier = Modifier) {
@@ -49,13 +49,6 @@ fun ChipView(modifier: Modifier = Modifier) {
 
 }
 
-enum class PizzaTopping(val stringResId: ResId) {
-    Cheese(R.string.cheese),
-    Pepperoni(R.string.pepperoni),
-    Peppers(R.string.peppers),
-    Pineapple(R.string.pineapple),
-    Mushrooms(R.string.mushrooms);
-}
 private data class FilterChip(val pizzaTopping: PizzaTopping, var selected: Boolean)
 
 @Composable
