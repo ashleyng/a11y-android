@@ -35,12 +35,12 @@ fun ButtonView(modifier: Modifier = Modifier) {
         TextButton(
             onClick = { }
         ) {
-            Text("Text Button")
+            Text(stringResource(R.string.text_button_title))
         }
 
         Button(onClick = {  },
             enabled = false) {
-            Text("Disabled Filled")
+            Text(stringResource(R.string.unclickable_filled_button_title))
         }
 
         Button(onClick = {  }) {
@@ -60,7 +60,7 @@ fun ButtonView(modifier: Modifier = Modifier) {
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 Icon(imageVector = Icons.Outlined.Favorite, contentDescription = "Heart Icon")
-                Text(text = "Disabled")
+                Text(text = stringResource(R.string.label_unclickable))
             }
         }
     }

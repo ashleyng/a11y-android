@@ -24,16 +24,15 @@ enum class ComponentItem: ListRow {
     SegmentedButton,
     FloatingActionButton,
     CheckBox,
-    RadioButton;
+    RadioButton,
+    ToolTips,
+    Snackbar;
 
     override val subtitleString: ResId?
         get() {
             return when (this) {
-                SegmentedButton -> {
-                    R.string.segmented_button_description
-                }
                 TimePicker, DatePicker, Button, Card, Chip, Dialog, Slider, Switch, BottomSheet, FloatingActionButton,
-                Tabs, CheckBox, RadioButton -> {
+                Tabs, CheckBox, RadioButton, ToolTips, Snackbar, SegmentedButton -> {
                         null
                     }
             }
@@ -52,11 +51,13 @@ enum class ComponentItem: ListRow {
                 BottomSheet -> "bottomsheet"
                 DatePicker -> "datepicker"
                 Tabs -> "tabs"
-                SegmentedButton -> null
+                SegmentedButton -> "segmentbutton"
                 FloatingActionButton -> null
                 CheckBox -> "checkbox"
                 RadioButton -> "radiobutton"
                 TimePicker -> "timepicker"
+                ToolTips -> "tooltips"
+                Snackbar -> "snackbar"
             }
         }
 
@@ -77,6 +78,8 @@ enum class ComponentItem: ListRow {
             CheckBox -> context.getString(R.string.checkbox)
             RadioButton -> context.getString(R.string.radio_button)
             TimePicker -> context.getString(R.string.time_picker)
+            ToolTips -> context.getString(R.string.tooltips_title)
+            Snackbar -> context.getString(R.string.snackbar_title)
         }
     }
 
@@ -93,11 +96,13 @@ enum class ComponentItem: ListRow {
             BottomSheet -> BottomSheetView()
             DatePicker -> DatePickerView()
             Tabs -> TabsView()
-            SegmentedButton -> "segmentedButton" // TODO
+            SegmentedButton -> SegmentedButtonView()
             FloatingActionButton -> "floatingActionButton" // TODO
             CheckBox -> CheckboxView()
             RadioButton -> RadioButtonView()
             TimePicker -> TimePickerView()
+            ToolTips -> ToolTipsView()
+            Snackbar -> SnackbarView()
         }
     }
 }
